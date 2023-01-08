@@ -34,14 +34,14 @@ def test_check_is_has_8_queens_in_board():
 
 def test_check_if_has_no_queen_in_row():
     """ this function will test if the board has no more than one queen in the same row """
-    board = [[1, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 1],
-            [0, 0, 0, 0, 0, 1, 0, 0],
-            [0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 0],
-            [0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 1, 0, 0, 0, 0]]
+    board = [[1,0,0,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,0,1],
+            [0,0,0,0,0,1,0,0],
+            [0,0,1,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0],
+            [0,1,0,0,0,0,0,0],
+            [0,0,0,1,0,0,0,0]]
     for row in range(8):
         for column in range(8):
             if board[row][column] == 1:
@@ -57,7 +57,7 @@ def test_check_is_has_no_queen_in_column():
             [0,0,1,0,0,0,0,0],
             [0,0,0,0,0,0,1,0],
             [0,1,0,0,0,0,0,0],
-            [1,0,0,1,0,0,0,0]]
+            [0,0,0,1,0,0,0,0]]
     for row in range(8):
         for column in range(8):
             if board[row][column] == 1:
