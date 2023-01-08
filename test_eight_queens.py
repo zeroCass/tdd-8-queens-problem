@@ -31,3 +31,16 @@ def test_check_is_has_8_queens_in_board():
             [0,0,0,1,0,0,0,0]]
     result = has_eight_queens(board)
     assert result is True
+
+def test_check_if_has_no_queen_in_row():
+    """ this function will test if the board has no more than one queen the same row """
+    board = [[1,1,0,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,0,1],
+            [0,0,0,0,0,1,0,0],
+            [0,0,1,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0],
+            [0,1,0,0,0,0,0,0],
+            [0,0,0,1,0,0,0,0]]
+    result = is_solution_to_8_queens_problem(board)
+    assert result == 1
