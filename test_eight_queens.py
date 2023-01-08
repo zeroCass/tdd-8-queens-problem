@@ -67,7 +67,6 @@ def test_check_is_has_no_queen_in_column():
 def test_check_is_has_no_queen_in_main_diagonal():
     """ this function will check if has another queen in the same diagonal
     (top-rigth and bottom left) """
-    # fails in diagonal top-right (2,3 - 0,5)
     board = [[1,0,0,0,0,0,0,0],
             [0,0,0,0,1,0,0,0],
             [0,0,0,0,0,0,0,1],
@@ -82,4 +81,19 @@ def test_check_is_has_no_queen_in_main_diagonal():
                 result = has_queen_in_main_diagonal(board, row, column)
                 assert result is False
 
-    
+def test_check_is_has_no_queen_in_cross_diagonal():
+    """ this function check if there is only one queen in the second diagonal
+    (top-left and bottom-right) """
+    board = [[1,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,1]]
+    for row in range(8):
+        for column in range(8):
+            if board[row][column] == 1:
+                result = has_queen_in_cross_diagonal(board, row, column)
+                assert result is False
