@@ -68,14 +68,14 @@ def test_check_is_has_no_queen_in_main_diagonal():
     """ this function will check if has another queen in the same diagonal
     (top-rigth and bottom left) """
     # fails in diagonal top-right (2,3 - 0,5)
-    board = [[0,0,0,0,0,1,0,0],
-        [0,1,0,0,0,0,0,0],
-        [0,0,0,1,0,0,0,0],
-        [0,0,0,0,0,0,1,0],
-        [0,0,1,0,0,0,0,0],
-        [0,0,0,0,0,0,0,1],
-        [0,0,0,0,1,0,0,0],
-        [1,0,0,0,0,0,0,0]]
+    board = [[1,0,0,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,0,1],
+            [0,0,0,0,0,1,0,0],
+            [0,0,1,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0],
+            [0,1,0,0,0,0,0,0],
+            [0,0,0,1,0,0,0,0]]
     for row in range(8):
         for column in range(8):
             if board[row][column] == 1:

@@ -41,6 +41,23 @@ def has_queen_in_row(board: list, current_row: int, curent_column: int) -> bool:
             return True
     return False
 
+def has_queen_in_main_diagonal(board: list, current_row: int, current_column: int) -> bool:
+    """ check if there another queen in main diagonal of the current queen 
+    (top-right and bottom-left diagonals) """
+    # top-right
+    for row, column in zip(range(current_row, -1, -1), range(current_column, 8, 1)):
+        if row == current_row and column == current_column:
+            continue
+        if board[row][column] == 1:
+            return True
+    # bottom-left
+    for row, column in zip(range(current_row, 8, 1), range(current_column, -1, -1)):
+        if row == current_row and column == current_column:
+            continue
+        if board[row][column] == 1:
+            return True
+
+    return False
 
 def is_solution_to_8_queens_problem(board) -> int:
     """ check the input it is a soluction for the 8 queens problem """
