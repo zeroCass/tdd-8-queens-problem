@@ -77,7 +77,7 @@ def has_queen_in_cross_diagonal(board: list, current_row: int, current_column: i
 
     return False
 
-def is_solution_to_8_queens_problem(board) -> int:
+def is_solution_to_8_queens_problem(board: list) -> int:
     """ check the input it is a soluction for the 8 queens problem """
     if not is_valid_board(board):
         return -1
@@ -89,5 +89,9 @@ def is_solution_to_8_queens_problem(board) -> int:
                 if has_queen_in_row(board, row, column):
                     return 0
                 if has_queen_in_column(board, row, column):
+                    return 0
+                if has_queen_in_main_diagonal(board, row, column):
+                    return 0
+                if has_queen_in_cross_diagonal(board, row, column):
                     return 0
     return 1

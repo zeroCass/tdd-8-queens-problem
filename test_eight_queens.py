@@ -101,15 +101,13 @@ def test_check_is_has_no_queen_in_cross_diagonal():
 def test_is_a_solution():
     """ this test contain call the function that check if the input is a solution
     for eight_queen problem. This will check all other test and if it pass, then is a solution """
-    board = [
-        [0,0,0,0,0,1,0,0],
-        [0,1,0,0,0,0,0,0],
-        [0,0,0,1,0,0,0,0],
-        [0,0,0,0,0,0,1,0],
-        [0,0,1,0,0,0,0,0],
-        [0,0,0,0,0,0,0,1],
-        [0,0,0,0,1,0,0,0],
-        [1,0,0,0,0,0,0,0],
-    ]
+    board = [[1,0,0,0,0,0,0,0],
+            [0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,0,1],
+            [0,0,0,0,0,1,0,0],
+            [0,0,1,0,0,0,0,0],
+            [0,0,0,0,0,0,1,0],
+            [0,1,0,0,0,0,0,0],
+            [0,0,0,1,0,0,0,0]]
     result = is_solution_to_8_queens_problem(board)
     assert result == 1
