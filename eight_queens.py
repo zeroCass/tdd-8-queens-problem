@@ -15,6 +15,18 @@ def is_valid_board(board: list) -> bool:
             return False
     return True
 
+def has_eight_queens(board: list) -> bool:
+    """ check if the board has 8 queens """
+    total_queens = 0
+
+    for row in board:
+        for element in row:
+            if element == 1:
+                total_queens += 1
+    if total_queens == 8:
+        return True
+    return False
+
 def is_solution_to_8_queens_problem(board) -> int:
     """ check the input it is a soluction for the 8 queens problem """
     if not is_valid_board(board):
