@@ -27,8 +27,23 @@ def has_eight_queens(board: list) -> bool:
         return True
     return False
 
+def has_queen_in_row(board: list, current_row: int, curent_column: int) -> bool:
+    """ check if theres another queen in the current row of the actual queen """
+    for colum in range(8):
+        if board[current_row][colum] == 1 and colum != curent_column:
+            return True
+    return False
+
+
 def is_solution_to_8_queens_problem(board) -> int:
     """ check the input it is a soluction for the 8 queens problem """
     if not is_valid_board(board):
         return -1
+    if not has_eight_queens(board):
+        return -1
+    for row in range(8):
+        for column in range(8):
+            if board[row][column] == 1:
+                if has_queen_in_row(board, row, column):
+                    return 0
     return 1

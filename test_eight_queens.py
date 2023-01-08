@@ -33,14 +33,33 @@ def test_check_is_has_8_queens_in_board():
     assert result is True
 
 def test_check_if_has_no_queen_in_row():
-    """ this function will test if the board has no more than one queen the same row """
-    board = [[1,1,0,0,0,0,0,0],
+    """ this function will test if the board has no more than one queen in the same row """
+    board = [[1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1],
+            [0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0, 0, 0]]
+    for row in range(8):
+        for column in range(8):
+            if board[row][column] == 1:
+                result = has_queen_in_row(board, row, column)
+                assert result is False
+
+def test_check_is_has_no_queen_in_column():
+    """ this funciton will check if the board has no more than one queen in the same column """
+    board = [[1,0,0,0,0,0,0,0],
             [0,0,0,0,1,0,0,0],
             [0,0,0,0,0,0,0,1],
             [0,0,0,0,0,1,0,0],
             [0,0,1,0,0,0,0,0],
             [0,0,0,0,0,0,1,0],
             [0,1,0,0,0,0,0,0],
-            [0,0,0,1,0,0,0,0]]
-    result = is_solution_to_8_queens_problem(board)
-    assert result == 1
+            [1,0,0,1,0,0,0,0]]
+    for row in range(8):
+        for column in range(8):
+            if board[row][column] == 1:
+                result = has_queen_in_column(board, row, column)
+                assert result is False
